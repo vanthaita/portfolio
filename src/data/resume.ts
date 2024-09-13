@@ -62,6 +62,51 @@ export const DATA = {
   ],
   projects: [
     {
+      name: 'Mogi',
+      description: 'Mock Interview • Next.js • TypeScript',
+      externalLink: 'https://mogi-gamma.vercel.app/',
+      githubLink: 'https://github.com/vanthaita/Mogi',
+      image: './mogi.png',
+    },
+    {
+      name: 'Bugoru.dev',
+      description: 'Blog • Next.js • TypeScript',
+      externalLink: 'https://burogu-fontend.vercel.app/',
+      githubLink: 'https://github.com/vanthaita/burogu-fontend',
+      image: './burogu.png',
+    },
+    {
+      name: 'Notto',
+      description: 'Note • Next.js • TypeScript',
+      externalLink: 'https://notto-omega.vercel.app/',
+      githubLink: 'https://github.com/vanthaita/notto',
+      image: './notto.png',
     },
   ],
+  ideas: [
+    {
+      name: "AI SaaS for Cloning UI/UX Design",
+      description: "A tool that clones UI/UX designs from any website URL, built for no-code users to streamline web development.",
+      status: "Concept",
+      statusColor: "green", 
+    },
+    {
+      name: "AI SaaS for Auto-Writing Travel Blogs",
+      description: "An AI-based tool that automatically generates advanced blog posts about travel to promote tourism industries.",
+      status: "Concept",
+      statusColor: "orange",
+    },
+    {
+      name: "Web3 & GameFi: Cross-Game NFT Standard",
+      description: "Creating a blockchain network or NFT GameFi standard allowing NFTs to be used across multiple games.",
+      status: "Concept",
+      statusColor: "blue",
+    },
+    {
+      name: "Url document to PDF & Chat with PDF",
+      description: "A tool to convert url documents to PDFs and enable users to interact with the document via chat functionality for easier reading.",
+      status: "Concept",
+      statusColor: "orange",
+    },
+  ]
 } as const;

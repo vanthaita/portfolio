@@ -1,53 +1,99 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
+import { DATA } from '@/data/resume';
+import { FiArrowDown, FiArrowUp, FiGithub, FiExternalLink } from 'react-icons/fi';
+
 const Projects = () => {
-  const projects = [
-    {
-      name: 'Mogi',
-      description: 'Mock Interview • Next.js • TypeScript',
-      link: 'https://mogi-gamma.vercel.app/',
-      image: './mogi.png',
-    },
-    {
-      name: 'Bugoru.dev',
-      description: 'Blog • Next.js • TypeScript',
-      link: 'https://burogu-fontend.vercel.app/',
-      image: './burogu.png',
-    },
-    {
-      name: 'Notto',
-      description: 'Note • Next.js • TypeScript',
-      link: 'https://notto-omega.vercel.app/',
-      image: './notto.png',
-    },
-  ];
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (index: any) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
 
   return (
     <article className="flex flex-col gap-8">
       <header className="flex w-full flex-row justify-between gap-2">
         <h3 className="text-lg font-semibold text-neutral-900">Projects</h3>
       </header>
-      <section className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <a
+
+      <section className="grid gap-8 md:grid-cols-2">
+        {DATA.projects.map((project, index) => (
+          <div
             key={index}
-            className="group flex flex-col rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-            href={project.link}
-            target="_blank"
+            className="group flex flex-col rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl relative bg-white overflow-hidden"
+            style={{ height: '100%' }} 
             rel="noreferrer"
           >
-            <div className="relative h-40 w-full overflow-hidden rounded-t-lg">
+            <div className="relative h-48 w-full overflow-hidden">
               <img
                 src={project.image}
                 alt={project.name}
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <div className="flex flex-col justify-between gap-4 p-4 border-t border-neutral-200 bg-white">
-              <p className="text-lg font-medium text-neutral-900">{project.name}</p>
+
+            <div className="flex flex-col justify-between gap-4 p-6 border-t border-neutral-200">
+              <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-blue-600 transition-colors">
+                {project.name}
+              </h3>
               <p className="text-sm text-neutral-600">{project.description}</p>
             </div>
-          </a>
+
+            <div className='absolute bottom-0 right-0 flex justify-start items-center gap-x-4 px-6 py-3 bg-white'>
+              <a
+                href={project.githubLink}
+                className="text-neutral-800 hover:text-blue-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiGithub size={20} />
+              </a>
+              <a
+                href={project.externalLink}
+                className="text-neutral-800 hover:text-blue-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiExternalLink size={20} />
+              </a>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <header className="flex w-full justify-between items-center gap-2">
+        <h3 className="text-lg font-semibold text-neutral-900">My Ideas Project</h3>
+      </header>
+
+      <section className="flex flex-col gap-8">
+        {DATA.ideas.map((idea, index: number) => (
+          <div
+            key={index}
+            className="group flex flex-col rounded-xl shadow-md bg-neutral-100 transition-transform duration-300 hover:scale-105 cursor-pointer"
+            onClick={() => handleToggle(index)}
+          >
+            <div className="flex justify-between items-center p-6 border-t border-neutral-200">
+              <p className="text-lg font-medium text-neutral-900">{idea.name}</p>
+              {activeIndex === index ? (
+                <FiArrowUp size={16} className="text-neutral-500" />
+              ) : (
+                <FiArrowDown size={16} className="text-neutral-500" />
+              )}
+            </div>
+
+            {activeIndex === index && (
+              <div className="flex flex-col p-6 bg-neutral-50 gap-4">
+                <p className="text-sm text-neutral-600">{idea.description}</p>
+                <span
+                  className={`text-sm px-2 py-1 rounded-md bg-${idea.statusColor}-100 text-${idea.statusColor}-700 max-w-fit`}
+                >
+                  {idea.status}
+                </span>
+              </div>
+            )}
+          </div>
         ))}
       </section>
     </article>
