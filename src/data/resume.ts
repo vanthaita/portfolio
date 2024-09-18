@@ -4,7 +4,7 @@ export const DATA = {
   location: "TP HCM, VN",
   locationLink: "https://www.google.com/maps/place/HCM",
   description:
-    "  with a passion for building SaaS applications. I love creating innovative solutions that make life easier and more efficient.",
+    "  with a passion for building saas applications. I love creating innovative solutions that make life easier and more efficient.",
   avatarUrl: "/me.png",
   skills: [
     "React",
@@ -64,7 +64,7 @@ export const DATA = {
     {
       name: 'Mogi',
       description: 'Mock Interview • Next.js • TypeScript',
-      externalLink: 'https://mogi-gamma.vercel.app/',
+      externalLink: 'https://mogi-three.vercel.app',
       githubLink: 'https://github.com/vanthaita/Mogi',
       image: './mogi.png',
     },
@@ -85,13 +85,13 @@ export const DATA = {
   ],
   ideas: [
     {
-      name: "AI SaaS for Cloning UI/UX Design",
+      name: "AI saas for Cloning UI/UX Design",
       description: "A tool that clones UI/UX designs from any website URL, built for no-code users to streamline web development.",
       status: "Concept",
       statusColor: "green", 
     },
     {
-      name: "AI SaaS for Auto-Writing Travel Blogs",
+      name: "AI saas for Auto-Writing Travel Blogs",
       description: "An AI-based tool that automatically generates advanced blog posts about travel to promote tourism industries.",
       status: "Concept",
       statusColor: "orange",

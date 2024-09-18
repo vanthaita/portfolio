@@ -10,6 +10,7 @@ export const DATA = {
     "Node.js",
     "PostgreSQL",
     "Docker",
+    "ORM",
     "Rust",
     "Solidity",
     "C++",
