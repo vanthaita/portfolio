@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <article className="flex flex-col gap-8">
       <header className="flex w-full flex-row justify-between gap-2">
-        <h3 className="text-lg font-semibold text-neutral-900">Projects</h3>
+        <h3 className="text-lg font-semibold text-neutral-900">Projects &#40;Currently Under Maintenance&#41;</h3>
       </header>
 
       <section className="grid gap-8 md:grid-cols-2">
